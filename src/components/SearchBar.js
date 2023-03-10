@@ -2,11 +2,22 @@ import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-export default function SearchBar() {
+export default function SearchBar({
+  searchTerm,
+  onSearchTermChange,
+  onTermSubmit,
+}) {
   return (
     <View style={styles.background}>
       <Feather name="search" style={styles.iconStyle} />
-      <TextInput style={styles.textInputStyle} placeholder="Search" />
+      <TextInput
+        style={styles.textInputStyle}
+        placeholder="Search"
+        value={searchTerm}
+        onChangeText={(newSearchTerm) => onSearchTermChange(newSearchTerm)} // == onChangeText={onSearchTermChange}
+        onEndEditing={onTermSubmit} //by not putting any () we are just passing a reference to a function
+        autoCapitalize="none"
+      />
     </View>
   );
 }
