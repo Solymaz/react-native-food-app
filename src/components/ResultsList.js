@@ -1,0 +1,18 @@
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+
+export default function ResultsList({ title, results }) {
+  return (
+    <View>
+      <Text style={styles.title}>{title}</Text>
+      <Text>{results.length}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+});
