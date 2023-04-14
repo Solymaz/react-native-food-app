@@ -21,7 +21,9 @@ const ResultsList = ({ title, results, navigation }) => {
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
-              onPress={() => navigation.navigate("ResultsShow")}
+              onPress={() =>
+                navigation.navigate("ResultsShow", { id: item.id })
+              }
             >
               <ResultsDetail result={item} />
             </TouchableOpacity>
@@ -45,3 +47,5 @@ const styles = StyleSheet.create({
 });
 
 export default withNavigation(ResultsList);
+
+// to avoid sending around the navigation obj from the outermost parent through props we use withNavigation
