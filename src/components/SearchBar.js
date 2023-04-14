@@ -9,9 +9,9 @@ export default function SearchBar({
 }) {
   return (
     <View style={styles.background}>
-      <Feather name="search" style={styles.iconStyle} />
+      <Feather name="search" style={styles.icon} />
       <TextInput
-        style={styles.textInputStyle}
+        style={styles.textInput}
         placeholder="Search"
         value={searchTerm}
         onChangeText={(newSearchTerm) => onSearchTermChange(newSearchTerm)} // == onChangeText={onSearchTermChange}
@@ -30,13 +30,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginTop: 10,
     flexDirection: "row",
+    marginBottom: 10,
   },
-  iconStyle: {
+  icon: {
     fontSize: 35,
     alignSelf: "center",
     marginHorizontal: 15,
   },
-  textInputStyle: {
+  textInput: {
     fontSize: 18,
     flex: 1, // this is for text input to take up the entire horizontal space */
   },
