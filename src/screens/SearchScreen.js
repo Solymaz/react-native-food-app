@@ -14,9 +14,10 @@ export default function SearchScreen() {
       return result.price === price;
     });
   }
-
+  // "flex: 1" in the most parent view is to fix the scrolling bug on android device.
+  // This is to tell the device to use the actual visible screen that is visible and not more
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <SearchBar
         searchTerm={searchTerm}
         onSearchTermChange={(newSearchTerm) => setSearchTerm(newSearchTerm)} // onSearchTermChange={setSearchTerm}
